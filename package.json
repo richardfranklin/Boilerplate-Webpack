@@ -1,0 +1,31 @@
+{
+  "name": "boilerplate-webpack",
+  "version": "1.0.0",
+  "description": "A boilerplate for creating simple web apps",
+  "private": true,
+  "scripts": {
+    "start": "webpack --config webpack.config.js",
+    "server": "node server.js",
+    "start:dev": "webpack-dev-server",
+    "build": "webpack"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/richardfranklin/Boilerplate-Webpack.git"
+  },
+  "author": "Richard Franklin",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/richardfranklin/Boilerplate-Webpack/issues"
+  },
+  "homepage": "https://github.com/richardfranklin/Boilerplate-Webpack#readme",
+  "devDependencies": {
+    "opn-cli": "^3.1.0",
+    "webpack": "^4.19.1",
+    "webpack-cli": "^3.1.1",
+    "webpack-dev-server": "^3.1.8"
+  },
+  "dependencies": {
+    "lodash": "^4.17.11"
+  }
+}

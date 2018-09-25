@@ -1,0 +1,29 @@
+{
+    "extends": "airbnb-base",
+    "plugins": [
+        "import",
+        "json",
+        "jasmine"
+    ],
+    "env": {
+        "browser": true,
+        "es6": true,
+        "jasmine": true,
+        "jquery": true
+    },
+    "rules": {
+        "class-methods-use-this": 0,
+        "indent": ["error", "tab", { "SwitchCase": 1 }],
+        "no-tabs": 0,
+        "func-names": ["error", "never"],
+        "no-debugger": 1,
+        "no-new": 0,
+        "no-unused-vars": 1,
+        "comma-dangle": 1,
+        "no-underscore-dangle": 1,
+        "no-use-before-define": 0,
+        "no-param-reassign": ["error", { "props": false }],
+        "no-plusplus": ["error", { "allowForLoopAfterthoughts": true }],
+        "no-restricted-globals": 0
+    }
+}

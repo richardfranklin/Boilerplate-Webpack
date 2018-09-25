@@ -1,12 +1,13 @@
 const path = require('path');
-var Dashboard = require('webpack-dashboard');
+const Dashboard = require('webpack-dashboard');
 const DashboardPlugin = require('webpack-dashboard/plugin');
+
 const dashboard = new Dashboard();
 
 module.exports = {
 	entry: [
 		'webpack-dev-server/client?http://localhost:3000',
-		'./src/scripts/index'
+		'./src/scripts/index',
 	],
 	mode: 'development',
 	output: {
@@ -15,7 +16,7 @@ module.exports = {
 		filename: 'main.js',
 	},
 	plugins: [
-		new DashboardPlugin(dashboard.setData)
+		new DashboardPlugin(dashboard.setData),
 	],
 	module: {
 		rules: [
@@ -26,15 +27,14 @@ module.exports = {
 					{
 						loader: 'babel-loader',
 						options: {
-							presets: ['@babel/preset-env']
-						}
+							presets: ['@babel/preset-env'],
+						},
 					},
 					{
-						loader: 'eslint-loader'
-					}
+						loader: 'eslint-loader',
+					},
 				],
-				
-			}
-		]
-	}
+			},
+		],
+	},
 };

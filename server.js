@@ -6,7 +6,6 @@ const opn = require('opn');
 new WebpackDevServer(webpack(config), {
 	publicPath: config.output.publicPath,
 	historyApiFallback: true,
-	quiet: true, // For WebpackDashboard
 }).listen(3000, 'localhost', (err) => {
 	if (err) console.error(err);
 	opn('http://localhost:3000');

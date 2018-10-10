@@ -1,8 +1,4 @@
 const path = require('path');
-const Dashboard = require('webpack-dashboard');
-const DashboardPlugin = require('webpack-dashboard/plugin');
-
-const dashboard = new Dashboard();
 
 module.exports = {
 	entry: [
@@ -15,9 +11,7 @@ module.exports = {
 		publicPath: '/dist/scripts/',
 		filename: 'main.js',
 	},
-	plugins: [
-		new DashboardPlugin(dashboard.setData),
-	],
+	plugins: [],
 	module: {
 		rules: [
 			{

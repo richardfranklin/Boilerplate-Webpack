@@ -1,7 +1,5 @@
 const path = require('path');
 
-const webpack = require('karma-webpack');
-
 // Karma configuration
 module.exports = function (config) {
 	config.set({
@@ -16,15 +14,14 @@ module.exports = function (config) {
 			'src/tests/**/*_test.js',
 		],
 		plugins: [
-			webpack,
-			'karma-coverage-istanbul-reporter',
 			'karma-chrome-launcher',
+			'karma-eslint',
 			'karma-jasmine',
 			'karma-jasmine-html-reporter',
-			'karma-coverage',
+			'karma-webpack',
 			'karma-spec-reporter',
-			'karma-htmlfile-reporter',
-			'es6-shim',
+			'karma-coverage-istanbul-reporter',
+			'karma-coverage',
 		],
 		webpack: {
 			mode: 'development',
@@ -49,8 +46,7 @@ module.exports = function (config) {
 							loader: 'istanbul-instrumenter-loader',
 							options: { esModules: true },
 						},
-						include: path.resolve('responsive/common/js/'),
-						exclude: ['/node_modules/', /rr_p13n\.js/, /p13n_unoptimized\.js/],
+						include: path.resolve('src/scripts/'),
 					},
 				],
 			},
@@ -67,13 +63,13 @@ module.exports = function (config) {
 		// preprocess matching files before serving them to the browser
 		// available preprocessors: https://npmjs.org/browse/keyword/karma-preprocessor
 		preprocessors: {
-			'src/scripts/**/*.js': ['webpack'],
+			'src/scripts/**/*.js': ['webpack', 'coverage'],
 			'src/tests/**/*_test.js': ['webpack'],
 		},
 		// test results reporter to use
 		// possible values: 'dots', 'progress'
 		// available reporters: https://npmjs.org/browse/keyword/karma-reporter
-		reporters: ['spec', 'kjhtml', 'coverage-istanbul'],
+		reporters: ['spec', 'kjhtml', 'coverage', 'coverage-istanbul'],
 		coverageIstanbulReporter: {
 			reports: ['html', 'lcovonly', 'text-summary'],
 			fixWebpackSourcePaths: true,

@@ -1,6 +1,13 @@
 export default class TestClass {
-	testConsole() {
-		console.log('Returning true...'); // eslint-disable-line no-console
-		return true;
+	constructor(days) {
+		this.days = days;
+	}
+
+	addDays(nDays) {
+		this.days += nDays;
+	}
+
+	returnDays() {
+		return this.days;
 	}
 }
